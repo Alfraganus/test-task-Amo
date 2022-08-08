@@ -8,7 +8,21 @@ class CoreFunctions {
     CONST FILE_TO_DOWNLOAD_TO = 'files';
 
 
-    public function moveFiles()
+    public function __construct()
+    {
+        if(!is_dir(self::DIRECTORY_FROM)) {
+            mkdir(self::DIRECTORY_FROM);
+        }
+        if(!is_dir(self::DIRECTORY_TO)) {
+            mkdir(self::DIRECTORY_TO);
+        }
+        if(!is_dir(self::FILE_TO_DOWNLOAD_FROM)) {
+            mkdir(self::FILE_TO_DOWNLOAD_FROM);
+        }
+    }
+
+
+    public function moveFiles() : void
     {
         $files = array_diff(scandir(self::DIRECTORY_FROM), array('.', '..'));
         foreach($files as $file){
@@ -127,7 +141,5 @@ class CoreFunctions {
     }
 }
 
-$result = new CoreFunctions();
-$result->moveFiles();
 
 ?>

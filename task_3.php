@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<form action="buttonDownload.php" method="post">
+<form action="task_3.php" method="POST">
 <section class="pricing py-5">
     <div class="container">
         <div class="row">
@@ -74,16 +74,4 @@ if(isset($_POST[key($_POST)])) {
         echo $core->getFileContent($result['url']);
     }
 }
-
-
 ?>
-<!--<script>
-    var anchor=document.createElement('a');
-    anchor.setAttribute('href','file_to_download/sample.txt');
-    anchor.setAttribute('download','');
-    document.body.appendChild(anchor);
-    anchor.click();
-    anchor.parentNode.removeChild(anchor);
-</script>
-
--->
